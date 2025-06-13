@@ -1,0 +1,475 @@
+    :root {
+      --github-bg: #0d1117;
+      --github-header: #161b22;
+      --github-border: #30363d;
+      --github-text: #c9d1d9;
+      --github-link: #58a6ff;
+      --github-highlight: #ffffff;
+      --github-card-bg: rgba(22, 27, 34, 0.5);
+      --github-btn-bg: #21262d;
+      --github-btn-hover: #30363d;
+      --github-shadow: rgba(1, 4, 9, 0.8);
+      --skill-icon-bg: rgba(33, 38, 45, 0.7);
+      --telegram-card: #1c2b3a;
+    }
+
+    .light-theme {
+      --github-bg: #f5f8fa;
+      --github-header: #ffffff;
+      --github-border: #d0d7de;
+      --github-text: #24292f;
+      --github-link: #0969da;
+      --github-highlight: #000000;
+      --github-card-bg: rgba(255, 255, 255, 0.7);
+      --github-btn-bg: #f6f8fa;
+      --github-btn-hover: #eaeef2;
+      --github-shadow: rgba(208, 215, 222, 0.5);
+      --skill-icon-bg: rgba(246, 248, 250, 0.9);
+      --telegram-card: #eef7ff;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    }
+    
+    body {
+      background-color: var(--github-bg);
+      color: var(--github-text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      line-height: 1.5;
+    }
+    
+    .github-navbar {
+      background-color: var(--github-header);
+      border-bottom: 1px solid var(--github-border);
+      padding: 8px 32px;
+      display: flex;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 1px 3px var(--github-shadow);
+    }
+    
+    .github-logo {
+      display: flex;
+      align-items: center;
+      color: var(--github-text);
+      font-size: 20px;
+      font-weight: 600;
+      text-decoration: none;
+      margin-right: 20px;
+    }
+    
+    .github-logo i {
+      margin-right: 8px;
+      font-size: 28px;
+    }
+    
+    .nav-link {
+      color: var(--github-text);
+      text-decoration: none;
+      font-size: 14px;
+      padding: 5px 10px;
+      border-radius: 6px;
+      transition: background-color 0.2s;
+    }
+    
+    .nav-link:hover {
+      background-color: var(--github-btn-hover);
+      color: var(--github-highlight);
+    }
+    
+    .theme-toggle {
+      background: none;
+      border: none;
+      color: var(--github-text);
+      cursor: pointer;
+      font-size: 20px;
+      padding: 5px 10px;
+      border-radius: 6px;
+      transition: background-color 0.2s;
+    }
+    
+    .theme-toggle:hover {
+      background-color: var(--github-btn-hover);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 32px;
+    }
+    
+    header {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 40px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--github-border);
+      flex-wrap: wrap;
+      gap: 32px;
+    }
+    
+    .avatar-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 150px;
+    }
+    
+    .avatar {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 3px solid var(--github-border);
+      margin-bottom: 16px;
+      box-shadow: 0 4px 8px var(--github-shadow);
+    }
+    
+    .bio {
+      flex: 1;
+      min-width: 300px;
+    }
+    
+    .bio h1 {
+      font-size: 32px;
+      margin: 0 0 8px;
+      color: var(--github-highlight);
+    }
+    
+    .bio p {
+      margin: 4px 0;
+      color: var(--github-text);
+    }
+    
+    .pronouns {
+      background-color: rgba(56, 139, 253, 0.15);
+      color: var(--github-link);
+      padding: 2px 6px;
+      border-radius: 12px;
+      font-size: 14px;
+      display: inline-block;
+    }
+    
+    section {
+      margin-bottom: 40px;
+    }
+    
+    h2 {
+      font-size: 24px;
+      font-weight: 600;
+      border-bottom: 1px solid var(--github-border);
+      padding-bottom: 8px;
+      margin-bottom: 16px;
+      color: var(--github-highlight);
+    }
+    
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    
+    .skill-card {
+      background-color: var(--github-card-bg);
+      border: 1px solid var(--github-border);
+      border-radius: 12px;
+      padding: 20px;
+      transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 8px var(--github-shadow);
+    }
+    
+    .skill-card:hover {
+      border-color: var(--github-highlight);
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px var(--github-shadow);
+    }
+    
+    .skill-icon {
+      width: 60px;
+      height: 60px;
+      background-color: var(--skill-icon-bg);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 15px;
+      font-size: 28px;
+      color: var(--github-highlight);
+    }
+    
+    .skill-card h3 {
+      margin: 0 0 10px;
+      font-size: 18px;
+      color: var(--github-highlight);
+    }
+    
+    .skill-description {
+      color: var(--github-text);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    
+    a {
+      color: var(--github-link);
+      text-decoration: none;
+    }
+    
+    a:hover {
+      text-decoration: underline;
+    }
+    
+    footer {
+      text-align: center;
+      padding: 24px;
+      border-top: 1px solid var(--github-border);
+      color: var(--github-text);
+      margin-top: 40px;
+      background-color: var(--github-header);
+      border-radius: 8px;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+    }
+    
+    .project-card {
+      background-color: var(--github-card-bg);
+      border: 1px solid var(--github-border);
+      border-radius: 12px;
+      padding: 20px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 8px var(--github-shadow);
+    }
+    
+    .project-card:hover {
+      border-color: var(--github-highlight);
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px var(--github-shadow);
+    }
+    
+    .project-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    
+    .project-icon {
+      width: 24px;
+      height: 24px;
+      margin-right: 8px;
+      color: var(--github-highlight);
+    }
+    
+    .project-title {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--github-link);
+      margin: 0;
+    }
+    
+    .project-description {
+      color: var(--github-text);
+      font-size: 14px;
+      margin-bottom: 16px;
+      line-height: 1.6;
+    }
+    
+    .project-meta {
+      display: flex;
+      font-size: 12px;
+      color: var(--github-text);
+      gap: 16px;
+    }
+    
+    .language {
+      display: flex;
+      align-items: center;
+    }
+    
+    .language-color {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      margin-right: 4px;
+      display: inline-block;
+    }
+    
+    .stars, .forks {
+      display: flex;
+      align-items: center;
+    }
+    
+    .stars svg, .forks svg {
+      width: 16px;
+      height: 16px;
+      margin-right: 4px;
+      fill: var(--github-text);
+    }
+    
+    .bio-info {
+      display: flex;
+      align-items: center;
+      margin: 8px 0;
+      color: var(--github-text);
+      font-size: 14px;
+    }
+    
+    .bio-info svg {
+      margin-right: 8px;
+      flex-shrink: 0;
+      color: var(--github-highlight);
+    }
+    
+    .achievements-container {
+      display: flex;
+      gap: 15px;
+      margin-top: 15px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    
+    .achievement-badge {
+      height: 80px;
+      width: 80px;
+      border-radius: 12px;
+      background: var(--github-card-bg);
+      padding: 5px;
+      transition: transform 0.3s;
+      border: 1px solid var(--github-border);
+      box-shadow: 0 4px 8px var(--github-shadow);
+    }
+    
+    .achievement-badge:hover {
+      transform: scale(1.1);
+      border-color: var(--github-highlight);
+    }
+    
+    .telegram-section {
+      margin: 40px 0;
+    }
+    
+    .telegram-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+    }
+    
+    .telegram-card {
+      background-color: var(--telegram-card);
+      border: 1px solid var(--github-border);
+      border-radius: 12px;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 8px var(--github-shadow);
+    }
+    
+    .telegram-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px var(--github-shadow);
+      border-color: #0088cc;
+    }
+    
+    .telegram-avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      border: 2px solid #0088cc;
+      margin-right: 20px;
+      object-fit: cover;
+    }
+    
+    .telegram-info {
+      flex: 1;
+    }
+    
+    .telegram-title {
+      font-size: 18px;
+      color: var(--github-highlight);
+      margin-bottom: 5px;
+    }
+    
+    .telegram-description {
+      color: var(--github-text);
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+    
+    .telegram-link {
+      display: inline-block;
+      background-color: #0088cc;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background-color 0.2s;
+    }
+    
+    .telegram-link:hover {
+      background-color: #0077b3;
+      text-decoration: none;
+    }
+    
+    @media (max-width: 768px) {
+      .container {
+        padding: 16px;
+      }
+      
+      header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      
+      .bio-info {
+        justify-content: center;
+      }
+      
+      .avatar-container {
+        align-items: center;
+      }
+      
+      .github-navbar {
+        padding: 8px 16px;
+      }
+      
+      .telegram-card {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      .telegram-avatar {
+        margin-right: 0;
+        margin-bottom: 15px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .skills-grid, .projects-grid, .telegram-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      h1 {
+        font-size: 24px;
+      }
+      
+      h2 {
+        font-size: 20px;
+      }
+      
+      .achievement-badge {
+        height: 70px;
+        width: 70px;
+      }
+    }
